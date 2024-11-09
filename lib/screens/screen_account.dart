@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ridemate_4/screens/RideRequestScreen.dart';
+import 'package:ridemate_4/screens/RideRequestDetailsScreen.dart';
 import 'package:ridemate_4/screens/chat_screen.dart';
 import 'package:ridemate_4/screens/profile.dart';
 // import 'package:ridemate_4/screens/profile.dart';
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 20),
                 _buildMenuItem(Icons.home, "Home", context, null),
                 _buildMenuItem(Icons.request_page, "Request", context,
-                    RideRequestScreen(fromUserId: _currentUserId!, toUserId: 'otherUserId')), // Pass the currentUserId
+                    RideRequestScreen()), // Pass the currentUserId
                 _buildMenuItem(Icons.history, "History", context, TravelHistoryScreen()),
                 _buildMenuItem(Icons.info, "Profile", context, ProfileScreen()),
               ],
