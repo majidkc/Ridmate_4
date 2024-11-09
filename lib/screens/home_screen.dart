@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ridemate_4/screens/RideRequestDetailsScreen.dart';
 import 'package:ridemate_4/screens/screen_main.dart';
 import 'package:ridemate_4/screens/bill_splitter.dart';
 import 'package:ridemate_4/screens/screen_account.dart';
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   int _currentSelectedIndex = 0;
   bool _isCollapsed = true; // State for sidebar collapse/expand
-  final _pages = [ScreenMain(), ScreenSplit(), ScreenAccount()];
+  final _pages = [ScreenMain(), RideRequestScreen(), ScreenAccount()];
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen>
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.money), label: 'Split'),
+          BottomNavigationBarItem(icon: Icon(Icons.request_quote), label: 'Request'),
           BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
         ],
       ),

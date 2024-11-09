@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'signin_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -25,16 +24,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<void> _fetchUserData() async {
     if (_currentUser != null) {
-      DocumentSnapshot userDoc = await _firestore.collection('users').doc(_currentUser!.uid).get();
+      DocumentSnapshot userDoc =
+          await _firestore.collection('users').doc(_currentUser!.uid).get();
       setState(() {
         _userData = userDoc.data() as Map<String, dynamic>?;
       });
     }
-  }
-
-  void _logout() async {
-    await _auth.signOut();
-    Navigator.pop(context); // This will pop the ProfileScreen, returning to SignInScreen
   }
 
   @override
@@ -68,21 +63,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   _buildProfileField('Phone', _userData!['phone']),
                   const SizedBox(height: 10),
                   _buildProfileField('Email', _userData!['email']),
-                  const Spacer(),
-                  Center(
-                    child: ElevatedButton(
-                      onPressed: _logout,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.purple[900],
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                      ),
-                      child: const Text('Logout', style: TextStyle(fontSize: 18)),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
                 ],
               ),
             ),

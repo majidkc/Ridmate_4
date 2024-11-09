@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ridemate_4/screens/home_screen.dart';
 
 import 'package:ridemate_4/screens/signin_screen.dart'; // Adjust the import path as necessary
 
@@ -19,7 +21,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => SignInScreen()),
+        MaterialPageRoute(
+            builder: (context) => FirebaseAuth.instance.currentUser != null
+                ? const HomeScreen()
+                : SignInScreen()),
       );
     });
   }
@@ -27,7 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple, // Customize the splash screen background color
+      backgroundColor:
+          Colors.purple, // Customize the splash screen background color
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

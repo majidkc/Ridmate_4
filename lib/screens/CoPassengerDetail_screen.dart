@@ -578,10 +578,10 @@ class _CoPassengerDetailsScreenState extends State<CoPassengerDetailsScreen> {
                   ),
                   SizedBox(height: 16),
                   // Check if the toUserId is the same as the current userId
-                  Text(
-                    'User ID: ${widget.userId == _currentUserId ? "Unknown" : widget.userId}',
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  // Text(
+                  //   'User ID: ${widget.userId == _currentUserId ? "Unknown" : widget.userId}',
+                  //   style: TextStyle(fontSize: 16),
+                  // ),
                   SizedBox(height: 16),
 
                   // Send Ride Request Button
