@@ -48,7 +48,8 @@ class _ScreenMainState extends State<ScreenMain> {
                 findCoPassengers(); // Call to find co-passengers
               },
               child: Text('Search for a Co-Passenger'),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.purple, foregroundColor: Colors.white,),
+              
             ),
           ],
         ),
@@ -194,7 +195,7 @@ class _ScreenMainState extends State<ScreenMain> {
               selectedMode = newValue;
             });
           },
-          items: ['Car', 'Bike', 'Auto'].map((mode) {
+          items: ['Car', 'Auto'].map((mode) {
             return DropdownMenuItem(
               value: mode,
               child: Text(mode),

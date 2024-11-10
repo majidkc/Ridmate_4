@@ -38,12 +38,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange[900],
+      backgroundColor: Colors.purple[900],
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              color: Colors.orangeAccent[700],
+              color: Colors.purpleAccent[700],
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: Padding(

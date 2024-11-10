@@ -585,42 +585,75 @@ class _CoPassengerDetailsScreenState extends State<CoPassengerDetailsScreen> {
                   SizedBox(height: 16),
 
                   // Send Ride Request Button
-                  ElevatedButton(
-                    onPressed: _isLoading ? null : _sendRideRequest,
-                    child: _isLoading
-                        ? CircularProgressIndicator()
-                        : Text('Send Ride Request'),
-                  ),
-
-                  // Review Button
-                  ElevatedButton(
-                    onPressed: () {
-                      // Navigate to the review screen
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ReviewScreen(userId: widget.userId),
+                   ElevatedButton(
+                          onPressed: _isLoading ? null : _sendRideRequest,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                            textStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: _isLoading
+                              ? CircularProgressIndicator()
+                              : Text('Send Ride Request'),
                         ),
-                      );
-                    },
-                    child: Text('Give Review'),
-                  ),
 
-                  // View Reviews Button
-                  ElevatedButton(
-                    onPressed: () {
-                      // Navigate to the reviews screen
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ViewReviewScreen(userId: widget.userId),
+                        // Review Button
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigate to the review screen
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ReviewScreen(userId: widget.userId),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green,
+                            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                            textStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: Text('Give Review'),
                         ),
-                      );
-                    },
-                    child: Text('View Reviews'),
-                  ),
+
+                        // View Reviews Button
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigate to the reviews screen
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ViewReviewScreen(userId: widget.userId),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.orange,
+                            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                            textStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: Text('View Reviews'),
+                        ),
 
                   // Chat Box
                   Expanded(
